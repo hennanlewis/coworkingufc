@@ -1,0 +1,27 @@
+.barra-azul {
+	top: 0;
+	left: 0;
+	position: absolute;
+	height: 50px;
+	width: 100%;
+	background: #004b82 url(../../assets/bg-header-mec-linha.png) repeat-x 0 bottom;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+}
+
+.barra-azul button {
+	margin-right: 20px;
+	padding: 5px;
+	font-family: 'PT Sans Narrow';
+	color: #fff;
+	font-weight: bold;
+	text-decoration: none;
+	background: none;
+	border: none;
+}
+
+.barra-azul button:hover {
+	text-shadow: 0 0 10px #09f9f9;
+	cursor: pointer;
+}

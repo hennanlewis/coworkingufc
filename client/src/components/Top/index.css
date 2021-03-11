@@ -1,0 +1,9 @@
+.top {
+	margin-top: 60px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.top .seloContraDengue {
+	width: 90px;
+}
