@@ -1,6 +1,16 @@
 .main {
-	display: flex;
-	margin: 15px auto;
+	display: grid;
 	border: 2px #000 solid;
 	width: 500px;
+	flex-direction: row;
+}
+
+a {
+	text-decoration: none;
+	color: #000;
+}
+
+.editar, .excluir, .inserir {
+	display: grid;
+	grid-template-columns: auto;
 }
