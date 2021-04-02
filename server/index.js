@@ -1,31 +1,22 @@
-const express = require('express')
-const sequelize = require('./src/database/database')
-const http = require('http')
-const status = require('http-status')
-const app = express()
-const routes = require('./src/routes/routes')
+const app = require('express')()
+const consign = require('consign')
+const db = require('./config/db')
+const mongoose = require('mongoose')
 
-app.all('*', (req, res, next) => {
-	res.header('Access-Control-Allow-Origin', '*')
-	res.header('Access-Control-Allow-Methods', 'PUT, GET, POST, DELETE, OPTIONS')
-	res.header('Access-Control-Allow-Headers', 'Content-Type')
-	next()
-});
+require('./config/mongodb')
 
-app.use(express.json())
-app.use('/db/system', routes)
+app.db = db
+app.mongoose = mongoose
 
-app.use((req, res, next) => {
-	res.status.apply(status.NOT_FOUND).send('Page not found')
-})
+consign()
+.include('./config/passport.js')
+.then('./config/middlewares.js')
+.then('./api/validation.js')
+.then('./api')
+.then('./schedule')
+.then('./config/routes.js')
+.into(app)
 
-app.use((req, res, next) => {
-	res.status.apply(status.INTERNAL_SERVER_ERROR).json({error})
-})
-
-sequelize.sync({ force: false }).then(() => {
-	const port = 3003
-	app.set('port', port)
-	const server = http.createServer(app)
-	server.listen(port)
+app.listen(5000, () =>{
+     console.log('Backend ta rodandoo....')
 })
