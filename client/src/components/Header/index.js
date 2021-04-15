@@ -1,10 +1,11 @@
 import './index.css'
 
-export default function Header() {
-
+export default function Header(props) {
+	
 	return (
 		<>
-			<div className="barra-azul">
+			<div id="barra-azul">
+				{props.children}
 			</div>
 		</>
 	)

@@ -19,3 +19,19 @@ code {
 	font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
 	monospace;
 }
+
+#main h1, #main h2, #main h3, #main h4, #main h5 {
+	color: #004b82;
+}
+
+#main h1:first-child, 
+#main h2:first-child, 
+#main h3:first-child, 
+#main h4:first-child, 
+#main h5:first-child {
+	margin-top: -30px;
+}
+
+#error {
+	color: white
+}

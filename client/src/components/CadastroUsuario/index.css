@@ -1,0 +1,42 @@
+#form-cadastro {
+	display: flex;
+	justify-content: flex-end;
+	flex-wrap: wrap;
+	width: 260px;
+}
+
+#form-cadastro input {
+	display: flex;
+	flex-wrap: wrap;
+	margin-bottom: 10px;
+	width: 260px;
+	padding: 3px 10px;
+	box-sizing: border-box;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+}
+
+#form-cadastro button {
+	width: 260px;
+	margin-bottom: 5px;
+}
+
+#msg {
+	margin-top: 10px;
+	padding: 10px;
+	text-align: center;
+	background-color: #34AA3434;
+	color: #34AA34;
+	font-weight: 600;
+	border-radius: 5px;
+}
+
+#msgErro {
+	margin-top: 10px;
+	padding: 10px;
+	text-align: center;
+	background-color: #FF343434;
+	color: #AA3434;
+	font-weight: 600;
+	border-radius: 5px;
+}

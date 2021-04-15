@@ -1,8 +1,8 @@
 module.exports = {
-    authSecret: 'octopathtraveler',
+    authSecret: '',
      db: {
         host: '127.0.0.1',
-        port: 5432,
+        port: 0000,
         database: '',
         user: '',
         password: ''

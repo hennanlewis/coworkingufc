@@ -16,40 +16,38 @@ module.exports = app => {
     .get(admin(app.api.user.getById))
     .delete(admin(app.api.user.remove))
 
-    app.route('/categories')
-    .all(app.config.passport.authenticate())
-    .get(admin(app.api.category.get))
-    .post(admin(app.api.category.save))
-
-    // Cuidado com a ordem de colocar as rotas! Tem que vir antes de /categories/:id
-    app.route('/categories/tree')
-    .all(app.config.passport.authenticate())
-    .get(app.api.category.getTree)
-
-    
-    app.route('/categories/:id')
-    .all(app.config.passport.authenticate())
-    .get(app.api.category.getById)
-    .put(admin(app.api.category.save))
-    .delete(admin(app.api.category.remove))
-
-    app.route('/articles')
-    .all(app.config.passport.authenticate())
-    .get(admin(app.api.article.get))
-    .post(admin(app.api.article.save))
-
-    app.route('/articles/:id')
-    .all(app.config.passport.authenticate())
-    .get(app.api.article.getById)
-    .put(admin(app.api.article.save))
-    .delete(admin(app.api.article.remove))
-
-    app.route('/categories/:id/articles')
-    .all(app.config.passport.authenticate())
-    .get(app.api.article.getByCategory)
-
     app.route('/stats')
     .all(app.config.passport.authenticate())
     .get(app.api.stat.get)
+
+    app.route('/programs')
+    .all(app.config.passport.authenticate())
+    .get(app.api.program.get)
+    .post(app.api.program.save)
+	
+    app.route('/programs/:id')
+    .all(app.config.passport.authenticate())
+    .delete(admin(app.api.program.remove))
+	.put(app.api.program.save)
+	
+	app.route('/projects')
+    .all(app.config.passport.authenticate())
+    .get(app.api.project.get)
+    .post(app.api.project.save)
+	
+    app.route('/projects/:id')
+    .all(app.config.passport.authenticate())
+    .delete(admin(app.api.project.remove))
+	.put(app.api.project.save)
+	
+	app.route('/reservations')
+    .all(app.config.passport.authenticate())
+    .get(app.api.reservation.get)
+    .post(app.api.reservation.save)
+	
+    app.route('/reservations/:id')
+    .all(app.config.passport.authenticate())
+    .delete(admin(app.api.reservation.remove))
+	.put(admin(app.api.reservation.save))
 
 }

@@ -1,0 +1,38 @@
+html {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex: 1;
+}
+
+#form-login {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	width: 260px;
+}
+
+#form-login input {
+	display: flex;
+	flex-wrap: wrap;
+	margin-bottom: 10px;
+	width: 260px;
+	padding: 3px 10px;
+	box-sizing: border-box;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+}
+
+#form-login #login-login, #form-login #cadastro-login {
+	width: 260px;
+	margin-bottom: 5px;
+}
+
+#msg-login {
+	margin-top: 10px;
+	padding: 2px 10px;
+	text-align: center;
+	background-color: #FF343434;
+	color: #AA3434;
+	border-radius: 5px;
+}

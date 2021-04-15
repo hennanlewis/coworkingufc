@@ -15,18 +15,20 @@ module.exports = app => {
             return res.status(400).send(msg)
         }
 
-        if(category.id){
+        if(category.id && parseInt(category.id) !== category.parentId){
             app.db('categories')
             .update(category)
             .where({id: category.id})
             .then(_ => res.status(204).send())
             .catch(err => res.status(500).send(err))
 
-            } else {
+            } else if(!category.id){
             app.db('categories')
                 .insert(category)
                 .then(_ => res.status(204).send())
                 .catch(err => res.status(500).send(err))
+        }else {
+            res.status(400).send('Uma Categoria não pode ser filha dela mesma!')
         }
     }
 
@@ -44,7 +46,7 @@ module.exports = app => {
 
             const rowsDeleted = await app.db('categories')
                 .where({ id: req.params.id }).del()
-            existsOrError(rowsDeleted, 'Categoria não foi encontrada.')
+				existsOrError(rowsDeleted, 'Categoria não foi encontrada.')
 
             res.status(204).send()
         } catch(msg) {

@@ -18,11 +18,10 @@ module.exports = app => {
         try {
             existsOrError(user.name, 'Nome não informado')
             existsOrError(user.email, 'E-mail não informado')
-            existsOrError(user.password, 'Senha não informada')
             existsOrError(user.curso, 'Curso não informado')
+            existsOrError(user.password, 'Senha não informada')
             existsOrError(user.confirmPassword, 'Confirmação de Senha inválida')
-            equalsOrError(user.password, user.confirmPassword,
-                'Senhas não conferem')
+            equalsOrError(user.password, user.confirmPassword, 'Senhas não conferem')
 
             const userFromDB = await app.db('users')
             .where({ email: user.email }).first()
@@ -74,7 +73,7 @@ module.exports = app => {
         try {
             const articles = await app.db('articles')
                 .where({ userId: req.params.id })
-            existsOrError(articles, 'Usuário possui artigos.')
+            notExistsOrError(articles, 'Usuário possui artigos.')
 
             const rowsUpdated = await app.db('users')
                 .update({deletedAt: new Date()})

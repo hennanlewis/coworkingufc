@@ -1,0 +1,54 @@
+#botoes-dashboard {
+	display: flex;
+	justify-content: center;
+}
+
+#table-dashboard {
+	display: flex;
+	justify-content: center;
+}
+
+#table-dashboard table {
+	border-collapse: collapse;
+}
+
+#table-dashboard th:first-child {
+	border-radius: 10px 0 0 10px;
+	padding-left: 30px;
+}
+
+#table-dashboard th:last-child {
+	border-radius: 0 10px 10px 0;
+	padding-right: 30px;
+}
+
+#table-dashboard tr:nth-child(2n), #table-dashboard th  {
+	color: #004b82;
+	background-color: #DDD;
+}
+
+#table-dashboard tr:nth-child(2) {
+	border-radius: 20px;
+}
+
+#table-dashboard th {
+	padding: 5px 15px;
+	color: white;
+	background-color: #004b82;
+}
+
+#table-dashboard td {
+	padding: 2px 15px;
+}
+
+#table-dashboard td:nth-child(3n) {
+	border-radius: 10px 0 0 10px;
+}
+
+#table-dashboard tbody tr td:last-child {
+	border-radius: 0 10px 10px 0;
+}
+
+.table-dashboard {
+	text-align: center;
+}
