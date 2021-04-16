@@ -18,5 +18,5 @@ consign()
 .into(app)
 
 app.listen(5000, () =>{
-     console.log('Backend ta rodandoo....')
+     console.log('Servidor em execução...')
 })
